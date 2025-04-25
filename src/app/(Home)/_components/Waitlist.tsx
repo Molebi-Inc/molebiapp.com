@@ -38,13 +38,13 @@ export default function Waitlist() {
     |--------------------------------------------------
     */
 	return (
-		<section className="snap-start w-full min-h-screen max-w-7xl mx-auto px-[4%] gap-8 grid grid-cols-2 pt-24 items-center">
+		<section className="snap-start w-full min-h-screen max-w-7xl mx-auto px-[4%] gap-8 grid md:grid-cols-2 pt-24 items-center">
 			{/**
             |--------------------------------------------------
             | Left view
             |--------------------------------------------------
             */}
-			<div className="col-span-1">
+			<div className="col-span-1 mb-12">
 				{/**
                 |--------------------------------------------------
                 | Header
@@ -54,7 +54,7 @@ export default function Waitlist() {
 					initial={{ opacity: 0, y: -40 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 1.6, ease: 'easeInOut' }}
-					className="text-7xl font-bold tracking-tighter mb-8"
+					className="md:text-7xl text-5xl font-bold tracking-tighter mb-8"
 				>
 					We’re almost there. Join the Waitlist!
 				</motion.h1>
@@ -153,7 +153,7 @@ export default function Waitlist() {
                 */}
 				<motion.div
 					animate={{ y: ['0%', '-100%'] }}
-					className="flex flex-col gap-4 ml-auto"
+					className="flex flex-col gap-4 md:ml-auto"
 					transition={{ repeat: Infinity, duration: 20, ease: 'easeInOut' }}
 				>
 					{_IMAGES?.map((src, index) => (

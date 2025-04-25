@@ -32,7 +32,7 @@ export default function MobileNavbar() {
     |--------------------------------------------------
     */
 	return (
-		<div className="md:hidden flex fixed top-0 h-[60px] items-center justify-between bg-white shadow-md z-[500] w-screen px-4">
+		<div className="md:hidden flex fixed top-0 h-[60px] overflow-visible items-center justify-between bg-white shadow-md z-[500] w-screen px-4">
 			{/**
             |--------------------------------------------------
             | Logo
@@ -60,13 +60,8 @@ export default function MobileNavbar() {
                 | Content
                 |--------------------------------------------------
                 */}
-				<SheetContent className="z-[6000]">
-					<motion.div
-						initial={{ x: 40, opacity: 0 }}
-						className="p-6 pt-16 flex flex-col gap-6"
-						whileInView={isOpen ? { x: 0, opacity: 1 } : {}}
-						transition={{ duration: 1.3, ease: 'easeInOut' }}
-					>
+				<SheetContent className="z-[600] h-[100vh] max-w-[320px]" side="top">
+					<div className="p-6 pt-12 flex flex-col gap-6 w-full relative">
 						{/**
                         |--------------------------------------------------
                         | Home
@@ -126,7 +121,7 @@ export default function MobileNavbar() {
 								</motion.a>
 							</Button>
 						</motion.div>
-					</motion.div>
+					</div>
 				</SheetContent>
 			</Sheet>
 		</div>

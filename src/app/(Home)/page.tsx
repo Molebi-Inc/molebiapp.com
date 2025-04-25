@@ -26,7 +26,7 @@ export default function LadningPage() {
     |--------------------------------------------------
     */
 	return (
-		<div className="flex h-screen isolate z-40 flex-col scroll-smooth snap-y snap-mandatory">
+		<div className="flex h-screen isolate z-40 flex-col md:scroll-smooth md:snap-y md:snap-mandatory">
 			{/**
             |--------------------------------------------------
             | Hero section

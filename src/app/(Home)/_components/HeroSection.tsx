@@ -67,8 +67,8 @@ export default function HeroSection() {
     |--------------------------------------------------
     */
 	return (
-		<section className="w-full snap-start px-[4%] flex flex-col gap-2 relative">
-			<div className="flex w-full max-w-7xl h-screen mx-auto justify-between items-center md:flex-row flex-col">
+		<section className="w-full md:snap-start px-[4%] flex flex-col gap-2 relative">
+			<div className="flex w-full max-w-7xl md:h-screen mx-auto justify-between items-center md:flex-row flex-col">
 				<div className="relative">
 					<AnimatePresence initial={true} mode="wait">
 						<motion.div
@@ -85,7 +85,7 @@ export default function HeroSection() {
                             | Header
                             |--------------------------------------------------
                             */}
-							<motion.h1 className="text-7xl tracking-tighter font-bold max-w-[700px] text-black">
+							<motion.h1 className="md:text-7xl text-5xl tracking-tighter font-bold max-w-[700px] text-black">
 								{_DATA[currentIndex].title}
 							</motion.h1>
 

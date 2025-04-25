@@ -23,16 +23,16 @@ export default function JoinOurTeam() {
     */
 	return (
 		<section className="snap-start mx-auto w-full">
-			<div className="grid grid-cols-2 w-full gap-12 max-w-7xl mx-auto items-center">
+			<div className="grid md:grid-cols-2 w-full gap-12 max-w-7xl mx-auto items-center px-[4%]">
 				<div
-					className="col-span-1 h-[80vh] rounded-3xl mb-auto mt-24 w-full bg-cover bg-center sticky top-24"
+					className="col-span-1 md:h-[80vh] h-[40vh] rounded-3xl mb-auto mt-24 w-full bg-cover bg-center md:sticky md:top-24"
 					style={{ backgroundImage: "url('/join.png')" }}
 				/>
 
 				<motion.div
 					initial={{ x: 50, opacity: 0 }}
 					whileInView={{ x: 0, opacity: 1 }}
-					className="col-span-1 pt-24 min-h-screen"
+					className="col-span-1 md:pt-24 min-h-screen"
 					transition={{ duration: 1.4, ease: 'easeInOut' }}
 				>
 					<div className="col-span-1 flex flex-col items-start">
@@ -41,7 +41,7 @@ export default function JoinOurTeam() {
                         | Header
                         |--------------------------------------------------
                         */}
-						<h1 className="text-7xl tracking-tighter font-bold text-start max-w-[700px]">
+						<h1 className="md:text-7xl text-4xl tracking-tighter font-bold text-start max-w-[700px]">
 							This isn’t just another family tree app.
 						</h1>
 

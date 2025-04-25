@@ -15,7 +15,7 @@ export default function ContactUs() {
     |--------------------------------------------------
     */
 	return (
-		<section className="w-full grid grid-cols-2 snap-start gap-12">
+		<section className="w-full grid xl:grid-cols-2 snap-start gap-12">
 			<motion.div
 				className="col-span-1"
 				initial={{ opacity: 0, x: -40 }}
@@ -27,7 +27,7 @@ export default function ContactUs() {
 					width={10000}
 					height={10000}
 					src="/contact2.png"
-					className="w-full h-screen object-cover sepia-10 saturate-200 brightness-125 grayscale-25"
+					className="w-full xl:h-screen h-[40vh] object-cover sepia-10 saturate-200 brightness-125 grayscale-25"
 				/>
 			</motion.div>
 
@@ -40,7 +40,7 @@ export default function ContactUs() {
 				initial={{ x: 40, opacity: 0 }}
 				whileInView={{ x: 0, opacity: 1 }}
 				transition={{ duration: 1.2, ease: 'easeInOut' }}
-				className="col-span-1 flex flex-col justify-center items-start"
+				className="col-span-1 flex flex-col justify-center items-start px-[4%]"
 			>
 				<h1 className="text-base font-semibold tracking-tighter py-2 px-6 mb-6 border border-black rounded-full">
 					Contact us
@@ -51,7 +51,7 @@ export default function ContactUs() {
                 | Header
                 |--------------------------------------------------
                 */}
-				<h2 className="font-bold tracking-tighter text-7xl max-w-[700px]">
+				<h2 className="font-bold tracking-tighter text-4xl md:text-7xl max-w-[700px]">
 					Got questions, partnerships, or media inquiries?
 				</h2>
 
@@ -60,7 +60,7 @@ export default function ContactUs() {
                 | Subtext
                 |--------------------------------------------------
                 */}
-				<p className="font-medium text-sm max-w-[600px] mt-4 text-justify">
+				<p className="font-medium text-sm max-w-[600px] mt-4 md:text-justify">
 					Reach out to us with any questions, feedback, or support needs you may have. Our team is always
 					ready to listen and provide the help you need. We aim to respond as quickly as possible to ensure a
 					smooth experience.

@@ -31,7 +31,7 @@ export default function Footer() {
 	return (
 		<React.Fragment>
 			<Anticipation />
-			<footer className="pt-20 text-center text-sm text-gray-900 snap-start bg-[#004000]">
+			<footer className="pt-20 text-center text-sm text-gray-900 snap-start bg-[#004000] px-[4%]">
 				<div className="max-w-7xl mx-auto flex w-full justify-between sm:flex-row flex-col gap-5 border-b border-b-white pb-3">
 					{/**
 					|--------------------------------------------------
@@ -72,7 +72,7 @@ export default function Footer() {
 						</div>
 					</div>
 
-					<div className="flex gap-4 items-end">
+					<div className="flex gap-4 items-end flex-wrap md:mt-0 mt-6">
 						{['Home', 'About Us', 'Contact Us'].map((navigation) => {
 							return (
 								<Link

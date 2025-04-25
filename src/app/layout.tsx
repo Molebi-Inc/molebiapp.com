@@ -46,7 +46,7 @@ export default function RootLayout({
 	|--------------------------------------------------
 	*/
 	return (
-		<html lang="en">
+		<html lang="en" className="md:scroll-smooth md:snap-y md:snap-mandatory">
 			<body
 				className={`antialiased relative scroll-smooth w-screen overflow-x-hidden bg-no-repeat m-0 p-0 ${montserrat.variable}`}
 			>

@@ -21,8 +21,8 @@ export default function Anticipation() {
     |--------------------------------------------------
     */
 	return (
-		<div className="flex flex-col gap-4 min-h-[600px] justify-center mx-auto max-w-7xl">
-			<div className="relative overflow-hidden w-fit mx-auto min-h-[100px] flex items-center flex-col">
+		<div className="flex flex-col gap-4 min-h-[600px] justify-center mx-auto max-w-7xl px-[4%]">
+			<div className="relative overflow-hidden w-fit mx-auto md:min-h-[100px] flex items-center flex-col">
 				{/**
                 |--------------------------------------------------
                 | Colored Text (revealed by mask)
@@ -34,7 +34,7 @@ export default function Anticipation() {
 					transition={{ duration: 3, ease: 'easeInOut' }}
 					className="absolute top-0 left-0 h-full overflow-hidden flex items-center"
 				>
-					<h1 className="text-5xl md:text-7xl leading-64 font-bold tracking-tighter text-transparent bg-clip-text bg-black whitespace-nowrap">
+					<h1 className="text-3xl md:text-7xl md:leading-64 font-bold tracking-tighter text-transparent bg-clip-text bg-black whitespace-nowrap">
 						Launching Soon
 					</h1>
 				</motion.div>
@@ -44,7 +44,7 @@ export default function Anticipation() {
                 | White Text Layer (on top initially)
                 |--------------------------------------------------
                 */}
-				<h1 className="text-5xl md:text-7xl tracking-tighter font-bold text-white whitespace-nowrap mt-2">
+				<h1 className="text-3xl md:text-7xl tracking-tighter font-bold text-white whitespace-nowrap mt-2">
 					Launching Soon
 				</h1>
 			</div>
