@@ -122,9 +122,14 @@
 }
 
 * {
-	font-family: 'Special Gothic Expanded One', sans-serif;
+	font-family: 'Montserrat';
 }
 
 html {
 	scroll-behavior: smooth;
+	scroll-snap-type: y mandatory;
+}
+
+section {
+	scroll-snap-align: start !important;
 }
