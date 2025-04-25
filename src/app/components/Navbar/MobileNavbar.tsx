@@ -32,7 +32,7 @@ export default function MobileNavbar() {
     |--------------------------------------------------
     */
 	return (
-		<div className="md:hidden flex fixed top-0 h-[60px] overflow-visible items-center justify-between bg-white shadow-md z-[500] w-screen px-4">
+		<div className="md:hidden flex fixed top-0 h-[60px] overflow-visible items-center justify-between bg-white shadow-sm z-[500] w-screen px-4">
 			{/**
             |--------------------------------------------------
             | Logo
