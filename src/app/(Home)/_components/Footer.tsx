@@ -25,7 +25,7 @@ export default function Footer() {
 	| Component states
 	|--------------------------------------------------
 	*/
-	const { contactRef } = useScroll();
+	const { contactRef, scrollTo } = useScroll();
 
 	/**
     |--------------------------------------------------
@@ -81,13 +81,21 @@ export default function Footer() {
 					<div className="flex gap-4 items-end flex-wrap md:mt-0 mt-6">
 						{['Home', 'About Us', 'Contact Us'].map((navigation) => {
 							return (
-								<Link
+								<a
 									key={navigation}
-									href={`#${navigation}`}
+									onClick={() =>
+										scrollTo(
+											navigation === 'Home'
+												? 'home'
+												: navigation === 'About Us'
+												? 'about'
+												: 'contact'
+										)
+									}
 									className="hover:text-amber-600 text-white text-start px-4 py-2 bg-gray-50/20 rounded-full"
 								>
 									{navigation}
-								</Link>
+								</a>
 							);
 						})}
 
