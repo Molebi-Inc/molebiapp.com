@@ -62,7 +62,7 @@ const Leaf = ({ leaf }: { leaf: LeafType }) => {
 				rotate: rotateMovement,
 			}}
 			className="absolute bg-green-600 rounded-full opacity-20 saturate-200"
-			src="https://img.freepik.com/free-psd/3d-green-leaf-isolated-transparent-background_191095-16527.jpg?semt=ais_hybrid&w=740"
+			src="/leaf.avif"
 		/>
 	);
 };
