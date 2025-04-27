@@ -5,7 +5,6 @@
 |--------------------------------------------------
 */
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { AlignVerticalDistributeCenter } from 'lucide-react';
@@ -16,6 +15,7 @@ import { AlignVerticalDistributeCenter } from 'lucide-react';
  |--------------------------------------------------
  */
 import { Button } from '@/components/ui/button';
+import { useScroll } from '@/app/(Home)/context/useScrollContext';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 export default function MobileNavbar() {
@@ -24,6 +24,7 @@ export default function MobileNavbar() {
     | Component states
     |--------------------------------------------------
     */
+	const { scrollTo } = useScroll();
 	const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
 	/**
@@ -67,39 +68,45 @@ export default function MobileNavbar() {
                         | Home
                         |--------------------------------------------------
                         */}
-						<Link
-							href="#home"
-							onClick={() => setIsOpen(false)}
+						<a
+							onClick={() => {
+								scrollTo('home');
+								setIsOpen(false);
+							}}
 							className="font-bold text-2xl tracking-tighter"
 						>
 							Home
-						</Link>
+						</a>
 
 						{/**
                         |--------------------------------------------------
                         | About us
                         |--------------------------------------------------
                         */}
-						<Link
-							href="#about"
-							onClick={() => setIsOpen(false)}
+						<a
+							onClick={() => {
+								scrollTo('about');
+								setIsOpen(false);
+							}}
 							className="font-bold text-2xl tracking-tighter"
 						>
 							About us
-						</Link>
+						</a>
 
 						{/**
                         |--------------------------------------------------
                         | Contact us
                         |--------------------------------------------------
                         */}
-						<Link
-							href="#contact"
-							onClick={() => setIsOpen(false)}
+						<a
+							onClick={() => {
+								scrollTo('contact');
+								setIsOpen(false);
+							}}
 							className="font-bold text-2xl tracking-tighter"
 						>
 							Contact
-						</Link>
+						</a>
 
 						<motion.div
 							initial="rest"

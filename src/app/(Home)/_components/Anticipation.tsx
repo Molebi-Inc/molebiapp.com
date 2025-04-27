@@ -83,10 +83,7 @@ export default function Anticipation() {
                     | Waitlist button with animated arrow
                     |--------------------------------------------------
                     */}
-					<Button
-						variant="outline"
-						className="!overflow-hidden relative py-4 px-8 min-h-[50px] bg-[#004000] btn btn-border-reveal rounded-full flex items-center gap-2"
-					>
+					<Button className="!overflow-hidden relative py-4 px-8 min-h-[50px] bg-[#004000] hover:bg-[#DB6F23] btn btn-border-reveal rounded-full flex items-center gap-2">
 						<motion.a
 							variants={{
 								rest: { x: 0 },

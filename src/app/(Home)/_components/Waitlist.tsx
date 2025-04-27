@@ -54,9 +54,9 @@ export default function Waitlist() {
 					initial={{ opacity: 0, y: -40 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 1.6, ease: 'easeInOut' }}
-					className="md:text-7xl text-5xl font-bold tracking-tighter mb-8"
+					className="text-3xl font-bold tracking-tighter mb-8 leading-[1.3]"
 				>
-					We’re almost there. Join the Waitlist!
+					Don’t miss out—join the waitlist for an exclusive first look at our groundbreaking features!
 				</motion.h1>
 
 				{/**
@@ -70,9 +70,8 @@ export default function Waitlist() {
 					transition={{ duration: 1.6, ease: 'easeInOut' }}
 					className="mb-8 font-medium max-w-[600px] text-justify text-sm"
 				>
-					Want to be the first to know when we launch? Join our waitlist and stay connected to the future of
-					ancestry, science, and culture. Don’t miss out—join the waitlist for an exclusive first look at our
-					groundbreaking features!
+					We’re almost there. Want to be the first to know when we launch? Join our waitlist and stay
+					connected to the future of ancestry, science, and culture.
 				</motion.p>
 
 				{/**
@@ -91,10 +90,7 @@ export default function Waitlist() {
                     | Waitlist button with animated arrow
                     |--------------------------------------------------
                     */}
-					<Button
-						variant="outline"
-						className="!overflow-hidden relative py-4 px-8 min-h-[50px] bg-[#004000] btn btn-border-reveal rounded-full flex items-center gap-2"
-					>
+					<Button className="!overflow-hidden relative py-4 px-8 min-h-[50px] bg-[#004000] hover:bg-[#DB6F23] btn btn-border-reveal rounded-full flex items-center gap-2">
 						<motion.a
 							variants={{
 								rest: { x: 0 },

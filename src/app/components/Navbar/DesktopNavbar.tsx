@@ -16,8 +16,11 @@ import { ArrowRight } from 'lucide-react';
 |--------------------------------------------------
 */
 import { Button } from '@/components/ui/button';
+import { useScroll } from '@/app/(Home)/context/useScrollContext';
 
 export default function DesktopNavbar() {
+	const { scrollTo } = useScroll();
+
 	/**
     |--------------------------------------------------
     | Rendered View
@@ -37,7 +40,9 @@ export default function DesktopNavbar() {
                     | Logo
                     |--------------------------------------------------
                     */}
-					<Image width={50} height={50} src="/logo.svg" alt="molebi logo" className="min-w-[150px]" />
+					<Link href="/">
+						<Image width={50} height={50} src="/logo.svg" alt="molebi logo" className="min-w-[150px]" />
+					</Link>
 
 					{/**
                     |--------------------------------------------------
@@ -50,25 +55,36 @@ export default function DesktopNavbar() {
                         | Home
                         |--------------------------------------------------
                         */}
-						<Link href="#home" className="">
+						<a
+							onClick={() => scrollTo('home')}
+							className="hover:text-[#DB6F23] bg-gray-100 p-2 px-4 rounded-full hover:shadow-sm"
+						>
 							Home
-						</Link>
+						</a>
 
 						{/**
                         |--------------------------------------------------
                         | About us
                         |--------------------------------------------------
                         */}
-						<Link href="#about" className="">
+						<a
+							onClick={() => scrollTo('about')}
+							className="hover:text-[#DB6F23] bg-gray-100 p-2 px-4 rounded-full hover:shadow-sm"
+						>
 							About us
-						</Link>
+						</a>
 
 						{/**
                         |--------------------------------------------------
                         | Contact us
                         |--------------------------------------------------
                         */}
-						<Link href="#contact">Contact</Link>
+						<a
+							onClick={() => scrollTo('contact')}
+							className="hover:text-[#DB6F23] bg-gray-100 p-2 px-4 rounded-full hover:shadow-sm"
+						>
+							Contact
+						</a>
 					</div>
 
 					<motion.div
@@ -82,10 +98,7 @@ export default function DesktopNavbar() {
 						| Waitlist button with animated arrow
 						|--------------------------------------------------
 						*/}
-						<Button
-							variant="outline"
-							className="!overflow-hidden relative py-4 px-8 min-h-[50px] bg-[#004000] btn btn-border-reveal rounded-full flex items-center gap-2"
-						>
+						<Button className="!overflow-hidden hover:bg-[#DB6F23] relative py-4 px-8 min-h-[50px] bg-[#004000] btn btn-border-reveal rounded-full flex items-center gap-2">
 							<motion.a
 								variants={{
 									rest: { x: 0 },

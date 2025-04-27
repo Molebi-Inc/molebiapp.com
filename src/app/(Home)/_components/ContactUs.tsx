@@ -26,7 +26,7 @@ export default function ContactUs() {
 					alt="contact"
 					width={10000}
 					height={10000}
-					src="/contact2.png"
+					src="/molebi_logo.jpg"
 					className="w-full xl:h-screen h-[40vh] object-cover sepia-10 saturate-200 brightness-125 grayscale-25"
 				/>
 			</motion.div>

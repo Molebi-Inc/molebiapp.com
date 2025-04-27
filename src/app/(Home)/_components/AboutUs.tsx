@@ -14,6 +14,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 |--------------------------------------------------
 */
 import useWidth from '@/app/hooks/useWidth';
+import { useScroll as useScrollTo } from '../context/useScrollContext';
 
 /**
 |--------------------------------------------------
@@ -33,6 +34,7 @@ export default function AboutUs() {
     |--------------------------------------------------
     */
 	const width = useWidth();
+	const { aboutRef } = useScrollTo();
 	const targetRef = React.useRef<HTMLDivElement>(null);
 	const { scrollYProgress } = useScroll({ target: targetRef });
 	const x = useTransform(scrollYProgress, [0, 1], ['0%', width > 1463 ? '-50%' : width > 1200 ? '-60%' : '-70%']);
@@ -43,7 +45,7 @@ export default function AboutUs() {
     |--------------------------------------------------
     */
 	return (
-		<section className="snap-start w-full bg-[#fff4f1]/10 pb-12 px-[4%] relative">
+		<section ref={aboutRef} className="snap-start w-full bg-[#fff4f1]/10 pb-12 px-[4%] relative">
 			<div className="w-full max-w-7xl mx-auto pt-28 flex flex-col justify-start">
 				{/**
                 |--------------------------------------------------
@@ -51,7 +53,7 @@ export default function AboutUs() {
                 |--------------------------------------------------
                 */}
 				<h1 className="md:text-7xl text-5xl max-w-[700px] tracking-tighter text-start mt-3 font-bold">
-					About us
+					About Molebi
 				</h1>
 
 				{/**
@@ -68,10 +70,10 @@ export default function AboutUs() {
                             |--------------------------------------------------
                             */}
 							<motion.span
-								initial={{ x: -50, opacity: 0 }}
+								initial={{ x: -20, opacity: 0 }}
 								whileInView={{ x: 0, opacity: 1 }}
 								transition={{ duration: 1, ease: 'easeInOut' }}
-								className="relative md:min-h-16 min-h-8 min-w-8 text-[#000000] bg-white border border-[#000000] md:min-w-16 flex items-center justify-center rounded-full text-sm md:text-base md:font-semibold"
+								className="relative md:min-h-16 min-h-8 min-w-8 text-[#000000] bg-white border border-[#000000] md:min-w-16 md:flex hidden items-center justify-center rounded-full text-sm md:text-base md:font-semibold"
 							>
 								{index + 1}
 
@@ -90,9 +92,9 @@ export default function AboutUs() {
                             */}
 							<motion.p
 								initial={{ x: 50, opacity: 0 }}
-								className="text-sm md:text-justify"
 								whileInView={{ x: 0, opacity: 1 }}
 								transition={{ duration: 1, ease: 'easeInOut' }}
+								className="md:text-base text-sm font-medium md:text-justify"
 							>
 								{data}
 							</motion.p>
@@ -123,18 +125,15 @@ export default function AboutUs() {
                         |--------------------------------------------------
                         */}
 						<div
-							className="h-full md:w-[900px] w-[84vw] relative bg-center rounded-md md:rounded-3xl bg-[#DB6F23] overflow-hidden col-span-1 hover:scale-95 transition-all isolate bg-no-repeat bg-cover"
-							style={{
-								backgroundImage:
-									"url('https://images.unsplash.com/photo-1662120455989-5a433cec9980?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fFF1ZXN0aW9uJTIwbWFya3xlbnwwfHwwfHx8MA%3D%3D')",
-							}}
+							className="h-[50vh] group md:h-full md:w-[900px] w-[84vw] relative bg-center rounded-md md:rounded-3xl bg-[#DB6F23] overflow-hidden col-span-1 hover:scale-95 transition-all isolate bg-no-repeat bg-cover"
+							style={{ backgroundImage: "url('/tree_seven.jpeg')" }}
 						>
 							{/**
 							|--------------------------------------------------
 							|
 							|--------------------------------------------------
 							*/}
-							<div className="inset-0 bg-black/60 absolute z-[-1]" />
+							<div className="absolute transition-all group-hover:hidden inset-0 z-[-1] bg-gradient-to-t from-black to-transparent" />
 							<div className="w-full h-full md:p-12 p-4 flex flex-col justify-between isolate z-[2]">
 								{/**
 								|--------------------------------------------------
@@ -150,7 +149,7 @@ export default function AboutUs() {
                                 |--------------------------------------------------
                                 */}
 								<div className="flex flex-col gap-6 justify-end">
-									<h1 className="text-white text-sm md:text-base p-2 border border-white rounded-full w-max px-6 font-bold tracking-tighter max-w-[90%]">
+									<h1 className="text-white text-xs md:text-base p-2 border border-white rounded-full w-max px-6 font-bold tracking-tighter max-w-[90%]">
 										Why we exist?
 									</h1>
 									{/**
@@ -158,21 +157,9 @@ export default function AboutUs() {
 									| Header
 									|--------------------------------------------------
 									*/}
-									<h1 className="text-white text-2xl md:text-7xl w-full font-bold tracking-tighter md:max-w-[90%]">
-										Because our culture deserves to be remembered.
+									<h1 className="text-white text-xl md:text-4xl w-full font-bold tracking-tighter md:max-w-[90%]">
+										Because heritage is fading too fast.
 									</h1>
-
-									{/**
-									|--------------------------------------------------
-									| Description
-									|--------------------------------------------------
-									*/}
-									<p className="text-sm md:text-base text-justify text-white md:max-w-[90%] font-medium">
-										Because our culture deserves to be remembered and protected for future
-										generations. It holds the wisdom, values, and spirit of those who came before
-										us—woven into every tradition and story. By honoring and preserving it today, we
-										ensure its power lives on tomorrow.
-									</p>
 								</div>
 							</div>
 						</div>
@@ -183,18 +170,15 @@ export default function AboutUs() {
                         |--------------------------------------------------
                         */}
 						<div
-							className="h-full md:w-[900px] w-[84vw] relative bg-center rounded-md md:rounded-3xl bg-[#DB6F23] overflow-hidden col-span-1 hover:scale-95 transition-all isolate bg-no-repeat bg-cover"
-							style={{
-								backgroundImage:
-									"url('https://images.unsplash.com/photo-1652077859695-de2851a95620?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fFF1ZXN0aW9uJTIwbWFya3xlbnwwfHwwfHx8MA%3D%3D')",
-							}}
+							className="h-[50vh] group md:h-full md:w-[900px] w-[84vw] relative bg-center rounded-md md:rounded-3xl bg-[#DB6F23] overflow-hidden col-span-1 hover:scale-95 transition-all isolate bg-no-repeat bg-cover"
+							style={{ backgroundImage: "url('/tree_eight.jpeg')" }}
 						>
 							{/**
 							|--------------------------------------------------
 							|
 							|--------------------------------------------------
 							*/}
-							<div className="inset-0 bg-black/40 absolute z-[-1]" />
+							<div className="inset-0 group-hover:hidden transition-all bg-black/40 absolute z-[-1]" />
 							<div className="w-full h-full md:p-12 p-4 flex flex-col justify-between isolate z-[2]">
 								{/**
 								|--------------------------------------------------
@@ -211,7 +195,7 @@ export default function AboutUs() {
                                 |--------------------------------------------------
                                 */}
 								<div className="flex flex-col gap-6 justify-end">
-									<h1 className="text-white text-sm md:text-base p-2 border border-white rounded-full w-max px-6 font-bold tracking-tighter max-w-[90%]">
+									<h1 className="text-white text-xs md:text-base p-2 border border-white rounded-full w-max px-6 font-bold tracking-tighter max-w-[90%]">
 										Why we exist?
 									</h1>
 
@@ -220,20 +204,9 @@ export default function AboutUs() {
 									| Headline
 									|--------------------------------------------------
 									*/}
-									<h1 className="text-white text-2xl md:text-7xl w-full font-bold tracking-tighter md:max-w-[90%]">
+									<h1 className="text-white text-xl md:text-4xl w-full font-bold tracking-tighter md:max-w-[90%]">
 										Because many don’t have access to their genetic data.
 									</h1>
-
-									{/**
-									|--------------------------------------------------
-									| Description
-									|--------------------------------------------------
-									*/}
-									<p className="text-sm md:text-base text-justify text-white max-w-[90%] font-medium">
-										Millions are left out of life-changing insights that could improve their health
-										and reconnect them to their roots. We believe everyone deserves the right to
-										know their biology, their ancestry, and their story.
-									</p>
 								</div>
 							</div>
 						</div>
@@ -244,18 +217,15 @@ export default function AboutUs() {
                         |--------------------------------------------------
                         */}
 						<div
-							className="h-full md:w-[900px] w-[84vw] relative bg-center rounded-md md:rounded-3xl bg-[#DB6F23] overflow-hidden col-span-1 hover:scale-95 transition-all isolate bg-no-repeat bg-cover"
-							style={{
-								backgroundImage:
-									"url('https://plus.unsplash.com/premium_photo-1700675175400-2930de24d773?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQ5fHxRdWVzdGlvbiUyMG1hcmt8ZW58MHx8MHx8fDA%3D')",
-							}}
+							className="h-[50vh] group md:h-full md:w-[900px] w-[84vw] relative bg-center rounded-md md:rounded-3xl bg-[#DB6F23] overflow-hidden col-span-1 hover:scale-95 transition-all isolate bg-no-repeat bg-cover"
+							style={{ backgroundImage: "url('/tree_nine.jpeg')" }}
 						>
 							{/**
 							|--------------------------------------------------
 							|
 							|--------------------------------------------------
 							*/}
-							<div className="inset-0 bg-black/60 absolute z-[-1]" />
+							<div className="absolute group-hover:hidden transition-all inset-0 z-[-1] bg-gradient-to-t from-black to-transparent" />
 							<div className="w-full h-full md:p-12 p-4 flex flex-col justify-between isolate z-[2]">
 								{/**
 								|--------------------------------------------------
@@ -272,7 +242,7 @@ export default function AboutUs() {
                                 |--------------------------------------------------
                                 */}
 								<div className="flex flex-col gap-6 justify-end">
-									<h1 className="text-white text-sm md:text-base p-2 border border-white rounded-full w-max px-6 font-bold tracking-tighter max-w-[90%]">
+									<h1 className="text-white text-xs md:text-base p-2 border border-white rounded-full w-max px-6 font-bold tracking-tighter max-w-[90%]">
 										Why we exist?
 									</h1>
 
@@ -281,20 +251,10 @@ export default function AboutUs() {
 									| Header
 									|--------------------------------------------------
 									*/}
-									<h1 className="text-white text-2xl md:text-7xl w-full font-bold tracking-tighter md:max-w-[90%]">
-										Because heritage is fading too fast.
+									<h1 className="text-white text-xl md:text-4xl w-full font-bold tracking-tighter md:max-w-[90%]">
+										Because our culture deserves to be remembered and protected for future
+										generations.
 									</h1>
-
-									{/**
-									|--------------------------------------------------
-									| Description
-									|--------------------------------------------------
-									*/}
-									<p className="text-sm md:text-base text-justify text-white md:max-w-[90%] font-medium">
-										The stories, languages, and legacies of our ancestors are vanishing with each
-										generation. We&apos;re here to preserve, protect, and pass them on—before they
-										disappear forever.
-									</p>
 								</div>
 							</div>
 						</div>

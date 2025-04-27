@@ -6,6 +6,9 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
+import { BsInstagram, BsLinkedin, BsTwitterX } from 'react-icons/bs';
 
 /**
 |--------------------------------------------------
@@ -14,7 +17,7 @@ import Image from 'next/image';
 */
 import Anticipation from './Anticipation';
 import { Button } from '@/components/ui/button';
-import { BsInstagram, BsLinkedin, BsTwitterX } from 'react-icons/bs';
+import { useScroll } from '../context/useScrollContext';
 
 export default function Footer() {
 	/**
@@ -22,6 +25,7 @@ export default function Footer() {
 	| Component states
 	|--------------------------------------------------
 	*/
+	const { contactRef } = useScroll();
 
 	/**
     |--------------------------------------------------
@@ -31,7 +35,7 @@ export default function Footer() {
 	return (
 		<React.Fragment>
 			<Anticipation />
-			<footer className="pt-20 text-center text-sm text-gray-900 snap-start bg-[#004000] px-[4%]">
+			<footer ref={contactRef} className="pt-4 text-center text-sm text-gray-900 snap-start bg-[#004000] px-[4%]">
 				<div className="max-w-7xl mx-auto flex w-full justify-between sm:flex-row flex-col gap-5 border-b border-b-white pb-3">
 					{/**
 					|--------------------------------------------------
@@ -39,13 +43,15 @@ export default function Footer() {
 					|--------------------------------------------------
 					*/}
 					<div className="flex flex-col">
-						<Image
-							src="/logo.svg"
-							alt="molebi logo"
-							width={50}
-							height={50}
-							className="w-[180px] h-auto mb-6 invert-100 grayscale-100 brightness-125 saturate-200 sepia-100"
-						/>
+						<Link href="/">
+							<Image
+								width={500}
+								height={500}
+								alt="molebilogo"
+								src="/molebi-white.png"
+								className="w-[180px] h-auto mb-6 -translate-x-8 translate-y-12"
+							/>
+						</Link>
 						<p className="mb-1 text-sm text-start text-white">
 							Got questions, partnerships, or media inquiries?
 						</p>
@@ -78,26 +84,55 @@ export default function Footer() {
 								<Link
 									key={navigation}
 									href={`#${navigation}`}
-									className="hover:text-amber-600 text-white text-start"
+									className="hover:text-amber-600 text-white text-start px-4 py-2 bg-gray-50/20 rounded-full"
 								>
 									{navigation}
 								</Link>
 							);
 						})}
 
-						{/**
-						|--------------------------------------------------
-						| Action button
-						|--------------------------------------------------
-						*/}
-						<Button className="text-[white] px-6 text-sm font-medium rounded-full bg-orange-200 mt-3 max-w-[200px]">
-							<a
-								href="https://forms.gle/Xo7rmTQ1J6cX18E58"
-								className="text-sm text-orange-900 hover:underline hover:underline-offset-2"
-							>
-								Join the Waitlist
-							</a>
-						</Button>
+						<motion.div
+							initial="rest"
+							animate="rest"
+							whileHover="hover"
+							className="relative inline-flex items-center"
+						>
+							{/**
+							|--------------------------------------------------
+							| Waitlist button with animated arrow
+							|--------------------------------------------------
+							*/}
+							<Button className="!overflow-hidden relative py-2 px-8 min-h-[30px] bg-[#DB6F23] btn btn-border-reveal rounded-full flex items-center gap-2">
+								<motion.a
+									variants={{
+										rest: { x: 0 },
+										hover: { x: -8 },
+									}}
+									transition={{ duration: 0.3 }}
+									href="https://forms.gle/Xo7rmTQ1J6cX18E58"
+									className="isolate z-20 text-sm font-medium text-white"
+								>
+									Join the waitlist
+								</motion.a>
+
+								{/**
+								|--------------------------------------------------
+								|  Arrow container (hidden initially, slides in on
+								| hover)
+								|--------------------------------------------------
+								*/}
+								<motion.span
+									variants={{
+										rest: { opacity: 0, x: 16 },
+										hover: { opacity: 1, x: 0 },
+									}}
+									transition={{ duration: 0.3, ease: 'easeInOut' }}
+									className="absolute right-4 z-10"
+								>
+									<ArrowRight size={18} className="text-white" />
+								</motion.span>
+							</Button>
+						</motion.div>
 					</div>
 				</div>
 

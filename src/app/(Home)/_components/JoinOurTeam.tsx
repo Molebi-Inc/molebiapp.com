@@ -32,7 +32,7 @@ export default function JoinOurTeam() {
 				<motion.div
 					initial={{ x: 50, opacity: 0 }}
 					whileInView={{ x: 0, opacity: 1 }}
-					className="col-span-1 md:pt-24 min-h-screen"
+					className="col-span-1 md:pt-24"
 					transition={{ duration: 1.4, ease: 'easeInOut' }}
 				>
 					<div className="col-span-1 flex flex-col items-start">
@@ -66,10 +66,7 @@ export default function JoinOurTeam() {
                             | Waitlist button with animated arrow
                             |--------------------------------------------------
                             */}
-							<Button
-								variant="outline"
-								className="!overflow-hidden relative pt-[14px] pb-5 px-12 min-h-[50px] bg-[#004000] btn btn-border-reveal rounded-full flex items-start gap-2"
-							>
+							<Button className="!overflow-hidden relative pt-[14px] pb-5 px-12 min-h-[50px] bg-[#004000] btn btn-border-reveal rounded-full flex items-start gap-2 hover:bg-[#DB6F23]">
 								<motion.a
 									variants={{
 										rest: { x: 0 },

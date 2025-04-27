@@ -12,7 +12,7 @@ import { Montserrat } from 'next/font/google';
 */
 import './globals.css';
 import Navbar from './components/Navbar';
-import Image from 'next/image';
+import { ScrollProvider } from './(Home)/context/useScrollContext';
 
 /**
 |--------------------------------------------------
@@ -50,35 +50,22 @@ export default function RootLayout({
 			<body
 				className={`antialiased relative scroll-smooth w-screen overflow-x-hidden bg-no-repeat m-0 p-0 ${montserrat.variable}`}
 			>
-				{/**
-				|--------------------------------------------------
-				| Navbar
-				|--------------------------------------------------
-				*/}
-				<Navbar />
-				<div className="isolate z-20">
+				<ScrollProvider>
 					{/**
 					|--------------------------------------------------
-					| Children
+					| Navbar
 					|--------------------------------------------------
 					*/}
-					{children}
-				</div>
-
-				{/**
-				|--------------------------------------------------
-				| Overlay
-				|--------------------------------------------------
-				*/}
-				<div className="inset-0 fixed z-[-1] w-screen h-screen">
-					<Image
-						width={1000}
-						height={1000}
-						src="/webbg2.jpg"
-						alt="background overlay"
-						className="w-screen h-screen grayscale-[200%] opacity-20 bg-contain mix-blend-multiply invert-200"
-					/>
-				</div>
+					<Navbar />
+					<div className="isolate z-20">
+						{/**
+						|--------------------------------------------------
+						| Children
+						|--------------------------------------------------
+						*/}
+						{children}
+					</div>
+				</ScrollProvider>
 			</body>
 		</html>
 	);
