@@ -19,7 +19,7 @@ import useWidth from '@/app/hooks/useWidth';
 | Images
 |--------------------------------------------------
 */
-const IMAGES_URL = ['/image_twelve.jpeg', '/image_three.jpeg', '/image_nine.jpeg', '/image_seven.jpeg'];
+const IMAGES_URL = ['/Designer.jpeg', '/image_three.jpeg', '/image_nine.jpeg', '/image_seven.jpeg'];
 
 export default function OurVision() {
 	/**
