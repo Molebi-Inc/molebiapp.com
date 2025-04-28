@@ -9,6 +9,8 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { useTheme } from '../context/DarkModeContext';
+import { cn } from '@/lib/utils';
 
 /**
 |--------------------------------------------------
@@ -26,6 +28,7 @@ const _IMAGES = [
 ];
 
 export default function Waitlist() {
+	const { theme } = useTheme();
 	/**
     |--------------------------------------------------
     | Component states
@@ -139,8 +142,18 @@ export default function Waitlist() {
 				| Top and Bottom Fade
 				|--------------------------------------------------
 				*/}
-				<div className="absolute top-0 right-0 w-full max-w-[450px] h-16 bg-gradient-to-b from-white to-transparent z-10" />
-				<div className="absolute bottom-0 right-0 w-full max-w-[450px] h-16 bg-gradient-to-t from-white to-transparent z-10" />
+				<div
+					className={cn(
+						'absolute top-0 right-0 w-full max-w-[450px] h-16 bg-gradient-to-b from-white to-transparent z-10',
+						theme === 'dark' && 'from-black'
+					)}
+				/>
+				<div
+					className={cn(
+						'absolute bottom-0 right-0 w-full max-w-[450px] h-16 bg-gradient-to-t from-white to-transparent z-10',
+						theme === 'dark' && 'from-black'
+					)}
+				/>
 
 				{/**
                 |--------------------------------------------------

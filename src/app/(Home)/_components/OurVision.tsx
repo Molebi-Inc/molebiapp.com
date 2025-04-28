@@ -19,7 +19,7 @@ import useWidth from '@/app/hooks/useWidth';
 | Images
 |--------------------------------------------------
 */
-const IMAGES_URL = ['/Designer.jpeg', '/tree_four.jpeg', '/tree_five.jpeg', '/tree_six.jpeg'];
+const IMAGES_URL = ['/image_twelve.jpeg', '/image_three.jpeg', '/image_nine.jpeg', '/image_seven.jpeg'];
 
 export default function OurVision() {
 	/**
@@ -117,7 +117,7 @@ export default function OurVision() {
 						initial={{ y: -50, opacity: 0 }}
 						whileInView={{ y: 0, opacity: 1 }}
 						transition={{ duration: 2, ease: 'easeInOut' }}
-						className="font-bold md:text-7xl text-center text-4xl tracking-tighter text-balance mt-6 max-w-[950px] text-black"
+						className="font-bold md:text-7xl text-center text-4xl tracking-tighter text-balance mt-6 max-w-[950px]"
 					>
 						Think We’re Just Another Family Tree App?
 					</motion.h1>
@@ -133,7 +133,7 @@ export default function OurVision() {
 						<h2 className="md:text-4xl text-xl font-bold mb-2 tracking-tighter max-w-[900px]">
 							Get Ready for Something Extraordinary!
 						</h2>
-						<p className="text-sm md:text-base max-w-[600px] text-gray-700 font-medium">
+						<p className="text-sm md:text-base max-w-[600px] font-medium">
 							Here’s a sneak peek to show you how we’re connecting roots, traditions, and real-time health
 							like never before.
 						</p>

@@ -25,8 +25,8 @@ export default function JoinOurTeam() {
 		<section className="snap-start mx-auto w-full">
 			<div className="grid md:grid-cols-2 w-full gap-12 max-w-7xl mx-auto items-center px-[4%]">
 				<div
-					className="col-span-1 md:h-[80vh] h-[40vh] rounded-3xl mb-auto mt-24 w-full bg-cover bg-center md:sticky md:top-24"
-					style={{ backgroundImage: "url('/join.png')" }}
+					className="col-span-1 md:h-[80vh] h-[40vh] bg-no-repeat rounded-3xl mb-auto mt-24 w-full bg-cover bg-center md:sticky md:top-24"
+					style={{ backgroundImage: "url('/our_team.jpeg')" }}
 				/>
 
 				<motion.div

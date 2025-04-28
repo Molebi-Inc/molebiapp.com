@@ -7,6 +7,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useTheme } from '../context/DarkModeContext';
+import { cn } from '@/lib/utils';
 
 /**
 |--------------------------------------------------
@@ -15,6 +17,7 @@ import { Button } from '@/components/ui/button';
 */
 
 export default function Anticipation() {
+	const { theme } = useTheme();
 	/**
     |--------------------------------------------------
     | Rendered View
@@ -34,7 +37,12 @@ export default function Anticipation() {
 					transition={{ duration: 3, ease: 'easeInOut' }}
 					className="absolute top-0 left-0 h-full overflow-hidden flex items-center"
 				>
-					<h1 className="text-3xl md:text-7xl md:leading-64 font-bold tracking-tighter text-transparent bg-clip-text bg-black whitespace-nowrap">
+					<h1
+						className={cn(
+							'text-3xl md:text-7xl md:leading-64 font-bold tracking-tighter text-transparent bg-clip-text bg-black whitespace-nowrap',
+							theme === 'dark' && 'bg-white'
+						)}
+					>
 						Launching Soon
 					</h1>
 				</motion.div>
@@ -44,7 +52,12 @@ export default function Anticipation() {
                 | White Text Layer (on top initially)
                 |--------------------------------------------------
                 */}
-				<h1 className="text-3xl md:text-7xl tracking-tighter font-bold text-white whitespace-nowrap mt-2">
+				<h1
+					className={cn(
+						'text-3xl md:text-7xl tracking-tighter font-bold text-white whitespace-nowrap mt-2',
+						theme === 'dark' && 'text-black'
+					)}
+				>
 					Launching Soon
 				</h1>
 			</div>

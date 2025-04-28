@@ -37,7 +37,7 @@ export default function Footer() {
     |--------------------------------------------------
     */
 	return (
-		<React.Fragment>
+		<div className="snap-start">
 			<Anticipation />
 			<footer ref={contactRef} className="pt-4 text-center text-sm text-gray-900 snap-start bg-[#004000] px-[4%]">
 				<div className="max-w-7xl mx-auto flex w-full justify-between sm:flex-row flex-col gap-5 border-b border-b-white pb-3">
@@ -181,6 +181,6 @@ export default function Footer() {
 
 				<p className="mt-8 w-full py-6 text-white">© 2025 Molebi. All rights reserved.</p>
 			</footer>
-		</React.Fragment>
+		</div>
 	);
 }

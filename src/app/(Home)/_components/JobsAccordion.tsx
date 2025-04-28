@@ -88,7 +88,7 @@ export default function JobAccordion() {
 								initial={{ opacity: 0, x: -20 }}
 								whileInView={{ opacity: 1, x: 0 }}
 								transition={{ duration: 1.2, ease: 'easeInOut' }}
-								className="whitespace-pre-line text-sm text-black text-justify"
+								className="whitespace-pre-line text-sm text-justify"
 							>
 								{job.details.about}
 							</motion.p>

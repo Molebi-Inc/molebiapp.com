@@ -45,7 +45,7 @@ export default function AboutUs() {
     |--------------------------------------------------
     */
 	return (
-		<section ref={aboutRef} className="snap-start w-full bg-[#fff4f1]/10 pb-12 px-[4%] relative">
+		<section ref={aboutRef} className="snap-start w-full pb-12 px-[4%] relative">
 			<div className="w-full max-w-7xl mx-auto pt-28 flex flex-col justify-start">
 				{/**
                 |--------------------------------------------------
@@ -126,7 +126,7 @@ export default function AboutUs() {
                         */}
 						<div
 							className="h-[50vh] group md:h-full md:w-[900px] w-[84vw] relative bg-center rounded-md md:rounded-3xl bg-[#DB6F23] overflow-hidden col-span-1 hover:scale-95 transition-all isolate bg-no-repeat bg-cover"
-							style={{ backgroundImage: "url('/tree_seven.jpeg')" }}
+							style={{ backgroundImage: "url('/image_eleven.jpeg')" }}
 						>
 							{/**
 							|--------------------------------------------------
@@ -171,7 +171,7 @@ export default function AboutUs() {
                         */}
 						<div
 							className="h-[50vh] group md:h-full md:w-[900px] w-[84vw] relative bg-center rounded-md md:rounded-3xl bg-[#DB6F23] overflow-hidden col-span-1 hover:scale-95 transition-all isolate bg-no-repeat bg-cover"
-							style={{ backgroundImage: "url('/tree_eight.jpeg')" }}
+							style={{ backgroundImage: "url('/image_eight.jpeg')" }}
 						>
 							{/**
 							|--------------------------------------------------
@@ -218,7 +218,7 @@ export default function AboutUs() {
                         */}
 						<div
 							className="h-[50vh] group md:h-full md:w-[900px] w-[84vw] relative bg-center rounded-md md:rounded-3xl bg-[#DB6F23] overflow-hidden col-span-1 hover:scale-95 transition-all isolate bg-no-repeat bg-cover"
-							style={{ backgroundImage: "url('/tree_nine.jpeg')" }}
+							style={{ backgroundImage: "url('/image_two.jpeg')" }}
 						>
 							{/**
 							|--------------------------------------------------

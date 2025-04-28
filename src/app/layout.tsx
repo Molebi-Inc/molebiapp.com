@@ -13,6 +13,7 @@ import { Montserrat } from 'next/font/google';
 import './globals.css';
 import Navbar from './components/Navbar';
 import { ScrollProvider } from './(Home)/context/useScrollContext';
+import { ThemeProvider } from './(Home)/context/DarkModeContext';
 
 /**
 |--------------------------------------------------
@@ -31,8 +32,27 @@ const montserrat = Montserrat({
 |--------------------------------------------------
 */
 export const metadata: Metadata = {
-	title: 'Molebi Inc',
-	description: 'Molebi is a culturally immersive healthtech platform that combines DNA science, ancestry, and intangible cultural heritage to empower people—especially in the developing world—with better health and identity insights.',
+	title: 'Molebi: Connecting Your Culture with Genetics.',
+	description:
+		'Molebi app is an app that integrates personalized DNA health insights with the preservation of cultural heritage, empowering families to protect their legacy and make informed health decisions.',
+	keywords: [
+		'Molebi app',
+		'DNA analysis',
+		'cultural heritage',
+		'African ancestry',
+		'health insights',
+		'family tree',
+		'genetics',
+		'preservation of culture',
+		'health-tech',
+		'genetic testing',
+		'developing world',
+		'cultural preservation',
+		'family tree DNA',
+		'ancestry insights',
+		' family health insights',
+		'DNA for health decisions',
+	],
 };
 
 export default function RootLayout({
@@ -50,22 +70,24 @@ export default function RootLayout({
 			<body
 				className={`antialiased relative scroll-smooth w-screen overflow-x-hidden bg-no-repeat m-0 p-0 ${montserrat.variable}`}
 			>
-				<ScrollProvider>
-					{/**
-					|--------------------------------------------------
-					| Navbar
-					|--------------------------------------------------
-					*/}
-					<Navbar />
-					<div className="isolate z-20">
+				<ThemeProvider>
+					<ScrollProvider>
 						{/**
 						|--------------------------------------------------
-						| Children
+						| Navbar
 						|--------------------------------------------------
 						*/}
-						{children}
-					</div>
-				</ScrollProvider>
+						<Navbar />
+						<div className="isolate z-20">
+							{/**
+							|--------------------------------------------------
+							| Children
+							|--------------------------------------------------
+							*/}
+							{children}
+						</div>
+					</ScrollProvider>
+				</ThemeProvider>
 			</body>
 		</html>
 	);

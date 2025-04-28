@@ -5,6 +5,7 @@
 */
 import React from 'react';
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { Mail, Phone } from 'lucide-react';
 
@@ -17,7 +18,7 @@ export default function ContactUs() {
 	return (
 		<section className="w-full grid xl:grid-cols-2 snap-start gap-12">
 			<motion.div
-				className="col-span-1"
+				className="col-span-1 my-auto"
 				initial={{ opacity: 0, x: -40 }}
 				whileInView={{ opacity: 1, x: 0 }}
 				transition={{ duration: 1.2, ease: 'easeInOut' }}
@@ -26,8 +27,8 @@ export default function ContactUs() {
 					alt="contact"
 					width={10000}
 					height={10000}
-					src="/molebi_logo.jpg"
-					className="w-full xl:h-screen h-[40vh] object-cover sepia-10 saturate-200 brightness-125 grayscale-25"
+					src={'/molebi.png'}
+					className={cn('w-full mix-blend-multiply max-w-[400px] md:max-w-[800px] mx-auto object-contain')}
 				/>
 			</motion.div>
 
@@ -42,7 +43,7 @@ export default function ContactUs() {
 				transition={{ duration: 1.2, ease: 'easeInOut' }}
 				className="col-span-1 flex flex-col justify-center items-start px-[4%]"
 			>
-				<h1 className="text-base font-semibold tracking-tighter py-2 px-6 mb-6 border border-black rounded-full">
+				<h1 className="text-base font-semibold tracking-tighter py-2 px-6 mb-6 border rounded-full">
 					Contact us
 				</h1>
 

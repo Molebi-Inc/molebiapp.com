@@ -7,14 +7,16 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { AlignVerticalDistributeCenter } from 'lucide-react';
+import { AlignVerticalDistributeCenter, MoonIcon, SunMoonIcon } from 'lucide-react';
 
 /**
  |--------------------------------------------------
  | Custom imports
  |--------------------------------------------------
  */
+import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { useTheme } from '@/app/(Home)/context/DarkModeContext';
 import { useScroll } from '@/app/(Home)/context/useScrollContext';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
@@ -25,6 +27,7 @@ export default function MobileNavbar() {
     |--------------------------------------------------
     */
 	const { scrollTo } = useScroll();
+	const { theme, toggleTheme } = useTheme();
 	const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
 	/**
@@ -53,7 +56,7 @@ export default function MobileNavbar() {
                     | Menu icon
                     |--------------------------------------------------
                     */}
-					<AlignVerticalDistributeCenter className="ml-auto" />
+					<AlignVerticalDistributeCenter className="ml-auto text-black" />
 				</SheetTrigger>
 
 				{/**
@@ -119,15 +122,66 @@ export default function MobileNavbar() {
                             | Waitlist button with animated arrow
                             |--------------------------------------------------
                             */}
-							<Button className="!overflow-hidden hover:shadow-none relative py-4 flex items-center gap-2 bg-transparent px-0">
+							<Button className="!overflow-hidden text-inherit hover:shadow-none relative py-4 flex items-center gap-2 bg-transparent px-0">
 								<motion.a
 									href="https://forms.gle/Xo7rmTQ1J6cX18E58"
-									className="isolate z-20 text-2xl font-bold tracking-tighter text-black hover:text-amber-600"
+									className="isolate z-20 text-2xl font-bold tracking-tighter hover:text-amber-600"
 								>
 									Join the waitlist
 								</motion.a>
 							</Button>
 						</motion.div>
+
+						{/**
+						|--------------------------------------------------
+						| Toggler
+						|--------------------------------------------------
+						*/}
+						<button
+							type="button"
+							onClick={toggleTheme}
+							className={cn(
+								'relative flex items-center w-16 h-8 bg-gray-100 dark:bg-gray-700 rounded-full p-1 transition-colors duration-300'
+							)}
+						>
+							{/**
+							|--------------------------------------------------
+							| Sliding circle
+							|--------------------------------------------------
+							*/}
+							<span
+								className={cn(
+									'absolute top-1 left-1 w-6 h-6 bg-white rounded-full shadow-md transform transition-all duration-300',
+									theme === 'dark' && 'translate-x-8'
+								)}
+							></span>
+
+							{/**
+							|--------------------------------------------------
+							|  Sun icon (left)
+							|--------------------------------------------------
+							*/}
+							<SunMoonIcon
+								size={18}
+								className={cn(
+									'absolute left-2 text-yellow-500 transition-opacity duration-300',
+									theme === 'dark' && 'opacity-0'
+								)}
+							/>
+
+							{/**
+							|--------------------------------------------------
+							| Moon icon (right)
+							|--------------------------------------------------
+							*/}
+							<MoonIcon
+								size={18}
+								className={cn(
+									'absolute right-2 text-black transition-opacity duration-300',
+									theme === 'light' && 'opacity-0'
+								)}
+							/>
+						</button>
 					</div>
 				</SheetContent>
 			</Sheet>

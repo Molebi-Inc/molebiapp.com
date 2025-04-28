@@ -6,6 +6,8 @@
 */
 import { useEffect, useState } from 'react';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { useTheme } from '../context/DarkModeContext';
+import { cn } from '@/lib/utils';
 
 /**
 |--------------------------------------------------
@@ -28,6 +30,7 @@ type LeafType = {
 |--------------------------------------------------
 */
 const Leaf = ({ leaf }: { leaf: LeafType }) => {
+	const { theme } = useTheme();
 	const { scrollY } = useScroll();
 
 	/**
@@ -36,7 +39,6 @@ const Leaf = ({ leaf }: { leaf: LeafType }) => {
 	|--------------------------------------------------
 	*/
 	const wave = useTransform(scrollY, (v) => Math.sin(v / (200 / leaf.speedFactor)));
-
 	const smoothWave = useSpring(wave, { damping: 10, stiffness: 50 });
 
 	/**
@@ -61,7 +63,10 @@ const Leaf = ({ leaf }: { leaf: LeafType }) => {
 				left: `${leaf.left}%`,
 				rotate: rotateMovement,
 			}}
-			className="absolute bg-green-600 rounded-full opacity-20 saturate-200"
+			className={cn(
+				'absolute bg-green-600 rounded-full opacity-20 saturate-200',
+				theme === 'dark' && 'opacity-5 bg-black'
+			)}
 			src="/leaf.avif"
 		/>
 	);

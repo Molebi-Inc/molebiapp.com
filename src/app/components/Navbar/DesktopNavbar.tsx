@@ -8,18 +8,21 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, MoonIcon, SunMoonIcon } from 'lucide-react';
 
 /**
 |--------------------------------------------------
 | Custom imports
 |--------------------------------------------------
 */
+import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { useScroll } from '@/app/(Home)/context/useScrollContext';
+import { useTheme } from '@/app/(Home)/context/DarkModeContext';
 
 export default function DesktopNavbar() {
 	const { scrollTo } = useScroll();
+	const { theme, toggleTheme } = useTheme();
 
 	/**
     |--------------------------------------------------
@@ -86,6 +89,57 @@ export default function DesktopNavbar() {
 							Contact
 						</a>
 					</div>
+
+					{/**
+					|--------------------------------------------------
+					| Toggler
+					|--------------------------------------------------
+					*/}
+					<button
+						type="button"
+						onClick={toggleTheme}
+						className={cn(
+							'relative flex items-center w-16 h-8 bg-gray-100 dark:bg-gray-900 rounded-full p-1 transition-colors duration-300'
+						)}
+					>
+						{/**
+						|--------------------------------------------------
+						| Sliding circle
+						|--------------------------------------------------
+						*/}
+						<span
+							className={cn(
+								'absolute top-1 left-1 w-6 h-6 bg-white rounded-full shadow-md transform transition-all duration-300',
+								theme === 'dark' && 'translate-x-8'
+							)}
+						></span>
+
+						{/**
+						|--------------------------------------------------
+						|  Sun icon (left)
+						|--------------------------------------------------
+						*/}
+						<SunMoonIcon
+							size={18}
+							className={cn(
+								'absolute left-2 text-yellow-500 transition-opacity duration-300',
+								theme === 'dark' && 'opacity-0'
+							)}
+						/>
+
+						{/**
+						|--------------------------------------------------
+						| Moon icon (right)
+						|--------------------------------------------------
+						*/}
+						<MoonIcon
+							size={18}
+							className={cn(
+								'absolute right-2 text-black transition-opacity duration-300',
+								theme === 'light' && 'opacity-0'
+							)}
+						/>
+					</button>
 
 					<motion.div
 						initial="rest"

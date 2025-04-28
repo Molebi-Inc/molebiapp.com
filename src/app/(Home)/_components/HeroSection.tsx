@@ -49,7 +49,7 @@ const _DATA = [
 | Images
 |--------------------------------------------------
 */
-const _IMAGES = ['/tree_two.jpeg', '/tree_one.jpeg', '/tree_four.jpeg'];
+const _IMAGES = ['/image_ten.jpeg', '/image_one.jpeg', '/image_four.jpeg'];
 
 export default function HeroSection() {
 	/**
@@ -87,7 +87,7 @@ export default function HeroSection() {
                             | Header
                             |--------------------------------------------------
                             */}
-							<motion.h1 className="md:text-5xl leading-[1.2] text-3xl tracking-tighter font-bold max-w-[700px] text-black">
+							<motion.h1 className="md:text-5xl leading-[1.2] text-3xl tracking-tighter font-bold max-w-[700px]">
 								{_DATA[currentIndex].title}
 							</motion.h1>
 
