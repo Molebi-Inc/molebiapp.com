@@ -27,6 +27,10 @@ export default function Footer() {
 	*/
 	const { contactRef, scrollTo } = useScroll();
 
+	const address = '3422 Old Capitol Trl, STE # 4028, Wilmington, Delaware, United States of America.';
+	const encodedAddress = encodeURIComponent(address);
+	const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+
 	/**
     |--------------------------------------------------
     | Rendered view
@@ -64,16 +68,30 @@ export default function Footer() {
 						| Contacts
 						|--------------------------------------------------
 						*/}
-						<div className="mr-auto text-white">
+						<div className="mr-auto text-white mb-2">
 							<b>Email: </b>
-							<a href="mailto:info@molebiapp.com" className="text-white text-sm">
+							<a
+								href="mailto:info@molebiapp.com"
+								className="text-white text-sm underline underline-offset-2"
+							>
 								info@molebiapp.com
 							</a>
 						</div>
-						<div className="mr-auto text-white">
+						<div className="mr-auto text-white mb-2">
 							<b>Phone: </b>
-							<a href="tel:+1-302-575-7318" className="text-white text-sm">
+							<a href="tel:+1-302-575-7318" className="text-white text-sm underline underline-offset-2">
 								+1-302-575-7318
+							</a>
+						</div>
+						<div className="mr-auto text-left text-white max-w-[400px]">
+							<b>Address: </b>
+							<a
+								target="_blank"
+								href={googleMapsUrl}
+								rel="noopener noreferrer"
+								className="text-white text-sm underline underline-offset-2"
+							>
+								3422 Old Capitol Trl, STE # 4028, Wilmington, Delaware, United States of America.
 							</a>
 						</div>
 					</div>
