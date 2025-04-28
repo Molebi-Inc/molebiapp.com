@@ -72,14 +72,14 @@ export default function Footer() {
 							<b>Email: </b>
 							<a
 								href="mailto:info@molebiapp.com"
-								className="text-white text-sm underline underline-offset-2"
+								className="text-white text-sm underline underline-offset-4"
 							>
 								info@molebiapp.com
 							</a>
 						</div>
 						<div className="mr-auto text-white mb-2">
 							<b>Phone: </b>
-							<a href="tel:+1-302-575-7318" className="text-white text-sm underline underline-offset-2">
+							<a href="tel:+1-302-575-7318" className="text-white text-sm underline underline-offset-4">
 								+1-302-575-7318
 							</a>
 						</div>
@@ -89,7 +89,7 @@ export default function Footer() {
 								target="_blank"
 								href={googleMapsUrl}
 								rel="noopener noreferrer"
-								className="text-white text-sm underline underline-offset-2"
+								className="text-white text-sm underline underline-offset-4"
 							>
 								3422 Old Capitol Trl, STE # 4028, Wilmington, Delaware, United States of America.
 							</a>
