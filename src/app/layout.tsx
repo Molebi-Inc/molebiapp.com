@@ -32,7 +32,7 @@ const montserrat = Montserrat({
 */
 export const metadata: Metadata = {
 	title: 'Molebi Inc',
-	description: 'Every family has a story. Ours connects heritage with health.',
+	description: 'Molebi is a culturally immersive healthtech platform that combines DNA science, ancestry, and intangible cultural heritage to empower people—especially in the developing world—with better health and identity insights.',
 };
 
 export default function RootLayout({
