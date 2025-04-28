@@ -96,7 +96,7 @@ export default function HeroSection() {
                             | Description
                             |--------------------------------------------------
                             */}
-							<motion.p className="max-w-[600px] text-sm w-full text-black text-justify font-extralight">
+							<motion.p className="max-w-[600px] !hidden text-sm w-full text-black text-justify font-extralight">
 								{_DATA[currentIndex].description}
 							</motion.p>
 
