@@ -51,6 +51,7 @@ export default function Footer() {
 							<Image
 								width={500}
 								height={500}
+								unoptimized
 								alt="molebilogo"
 								src="/molebi-white.png"
 								className="w-[180px] h-auto mb-6 -translate-x-8 translate-y-12"

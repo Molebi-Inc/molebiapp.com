@@ -24,6 +24,7 @@ export default function ContactUs() {
 				transition={{ duration: 1.2, ease: 'easeInOut' }}
 			>
 				<Image
+					unoptimized
 					alt="contact"
 					width={10000}
 					height={10000}

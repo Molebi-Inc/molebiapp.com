@@ -170,6 +170,7 @@ export default function Waitlist() {
 							src={src}
 							width={200}
 							height={350}
+							unoptimized
 							key={`col1-${index}`}
 							alt={`image-${index}`}
 							className="rounded-lg object-cover min-h-[350px]"
@@ -192,6 +193,7 @@ export default function Waitlist() {
 							src={src}
 							width={200}
 							height={350}
+							unoptimized
 							key={`col2-${index}`}
 							alt={`image-${index}`}
 							className="rounded-lg object-cover min-h-[350px]"

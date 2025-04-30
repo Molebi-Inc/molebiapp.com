@@ -193,6 +193,7 @@ export default function HeroSection() {
 						className="mt-32 md:mt-0 rounded-3xl overflow-hidden relative"
 					>
 						<Image
+							unoptimized
 							width={100000}
 							height={10000}
 							alt="background helix"
