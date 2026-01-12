@@ -59,7 +59,7 @@ export default function Waitlist() {
 					transition={{ duration: 1.6, ease: 'easeInOut' }}
 					className="text-3xl font-bold tracking-tighter mb-8 leading-[1.3]"
 				>
-					Don’t miss out—join the waitlist for an exclusive first look at our groundbreaking features!
+					Don’t miss out—sign up now for an exclusive first look at our groundbreaking features!
 				</motion.h1>
 
 				{/**
@@ -73,7 +73,7 @@ export default function Waitlist() {
 					transition={{ duration: 1.6, ease: 'easeInOut' }}
 					className="mb-8 font-medium max-w-[600px] text-justify text-sm"
 				>
-					We’re almost there. Want to be the first to know when we launch? Join our waitlist and stay
+					We’re almost there. Want to be the first to know when we launch? Sign up now and stay
 					connected to the future of ancestry, science, and culture.
 				</motion.p>
 
@@ -100,10 +100,10 @@ export default function Waitlist() {
 								hover: { x: -8 },
 							}}
 							transition={{ duration: 0.3 }}
-							href="https://forms.gle/Xo7rmTQ1J6cX18E58"
+							href="https://beta.molebiapp.com/welcome"
 							className="isolate z-20 text-sm font-medium text-white"
 						>
-							Join the waitlist
+							Sign up now
 						</motion.a>
 
 						{/**

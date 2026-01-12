@@ -124,10 +124,10 @@ export default function MobileNavbar() {
                             */}
 							<Button className="!overflow-hidden text-inherit hover:shadow-none relative py-4 flex items-center gap-2 bg-transparent px-0">
 								<motion.a
-									href="https://forms.gle/Xo7rmTQ1J6cX18E58"
+									href="https://beta.molebiapp.com/welcome"
 									className="isolate z-20 text-2xl font-bold tracking-tighter hover:text-amber-600"
 								>
-									Join the waitlist
+									Sign up now
 								</motion.a>
 							</Button>
 						</motion.div>

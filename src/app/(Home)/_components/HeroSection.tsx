@@ -25,7 +25,7 @@ import { useScroll } from '../context/useScrollContext';
 */
 const _DATA = [
 	{
-		cta: 'Join the Waitlist',
+		cta: 'Sign up now',
 		title: 'Your family’s story matters. We connect its roots to your health.',
 		description:
 			"It's more than just names and dates. We trace your roots to uncover the rich history behind your DNA. By connecting the past to your present, we help you better understand your health.",
@@ -124,7 +124,7 @@ export default function HeroSection() {
 											hover: { x: -8 },
 										}}
 										transition={{ duration: 0.3 }}
-										href="https://forms.gle/Xo7rmTQ1J6cX18E58"
+										href="https://beta.molebiapp.com/welcome"
 										className="isolate z-20 text-sm font-medium text-white"
 									>
 										{_DATA[currentIndex].cta}

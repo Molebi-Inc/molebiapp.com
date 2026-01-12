@@ -159,10 +159,10 @@ export default function DesktopNavbar() {
 									hover: { x: -8 },
 								}}
 								transition={{ duration: 0.3 }}
-								href="https://forms.gle/Xo7rmTQ1J6cX18E58"
+								href="https://beta.molebiapp.com/welcome"
 								className="isolate z-20 text-sm font-medium text-white"
 							>
-								Join the waitlist
+								Sign up now
 							</motion.a>
 
 							{/**
