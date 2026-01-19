@@ -180,7 +180,18 @@ export default function Footer() {
 					</a>
 				</div>
 
-				<p className="mt-8 w-full py-6 text-white">© 2025 Molebi. All rights reserved.</p>
+				<div className="mt-8 flex flex-col items-center gap-4 py-6">
+					<div className="flex gap-4 text-white text-sm">
+						<Link href="/privacy-policy" className="hover:text-amber-600 underline underline-offset-4">
+							Privacy Policy
+						</Link>
+						<span>|</span>
+						<Link href="/terms-of-service" className="hover:text-amber-600 underline underline-offset-4">
+							Terms of Service
+						</Link>
+					</div>
+					<p className="text-white">© 2025 Molebi. All rights reserved.</p>
+				</div>
 			</footer>
 		</div>
 	);
